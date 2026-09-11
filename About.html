@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sports Cars | About</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #0b0b0b;
+            color: white;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: black;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: red;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: red;
+        }
+
+        .hero {
+            min-height: 55vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 70px 7%;
+
+            background:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.65),
+                    rgba(0, 0, 0, 0.85)
+                ),
+                url("BUGATTI.jpg");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-content span {
+            color: red;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .hero-content h1 {
+            font-size: 60px;
+            margin: 20px 0;
+        }
+
+        .hero-content p {
+            color: #ddd;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .section {
+            padding: 90px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: red;
+            font-size: 15px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .section-title h2 {
+            font-size: 42px;
+            margin-top: 10px;
+        }
+
+        .section-title p {
+            max-width: 650px;
+            margin: 15px auto;
+            color: #aaa;
+            line-height: 1.7;
+        }
+
+        .about-info {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .info-card {
+            background-color: #151515;
+            padding: 35px;
+            border-top: 4px solid red;
+        }
+
+        .info-card h3 {
+            font-size: 25px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .info-card p {
+            color: #aaa;
+            line-height: 1.8;
+        }
+
+        .features {
+            background-color: #151515;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .feature-card {
+            background-color: #0b0b0b;
+            padding: 35px;
+            border-top: 4px solid red;
+        }
+
+        .feature-card h3 {
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .feature-card ul {
+            list-style: none;
+        }
+
+        .feature-card li {
+            color: #aaa;
+            padding: 10px 0;
+            border-bottom: 1px solid #222;
+        }
+
+        .feature-card li::before {
+            content: "✓";
+            color: red;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .achievements {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .achievement-image img {
+            width: 100%;
+            height: 430px;
+            object-fit: cover;
+        }
+
+        .achievement-text span {
+            color: red;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .achievement-text h2 {
+            font-size: 42px;
+            margin: 15px 0 20px;
+        }
+
+        .achievement-text p {
+            color: #aaa;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .achievement-list {
+            list-style: none;
+        }
+
+        .achievement-list li {
+            padding: 12px 0;
+            color: #ddd;
+            border-bottom: 1px solid #222;
+        }
+
+        .achievement-list li::before {
+            content: "★";
+            color: red;
+            margin-right: 12px;
+        }
+
+        .cta {
+            text-align: center;
+            padding: 100px 7%;
+
+            background:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.7),
+                    rgba(0, 0, 0, 0.85)
+                ),
+                url("LAMBO.jpg");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .cta h2 {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #ddd;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            line-height: 1.7;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: red;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #050505;
+            padding: 50px 7% 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-content h3 {
+            color: red;
+            margin-bottom: 15px;
+        }
+
+        .footer-content p {
+            color: #999;
+            line-height: 1.7;
+        }
+
+        .footer-links a {
+            display: block;
+            color: #999;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+
+        .copyright {
+            border-top: 1px solid #222;
+            padding-top: 20px;
+            text-align: center;
+            color: #777;
+        }
+
+        @media screen and (max-width: 1000px) {
+
+            .navbar {
+                padding: 18px 5%;
+            }
+
+            .nav-links {
+                gap: 20px;
+            }
+
+            .hero {
+                padding: 70px 6%;
+            }
+
+            .hero-content h1 {
+                font-size: 50px;
+            }
+
+            .section {
+                padding: 70px 5%;
+            }
+
+            .about-info {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .info-card:last-child {
+                grid-column: 1 / 3;
+                width: 50%;
+                margin: auto;
+            }
+
+            .feature-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .feature-card:last-child {
+                grid-column: 1 / 3;
+                width: 50%;
+                margin: auto;
+            }
+
+            .achievements {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .achievement-image img {
+                height: 400px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+        @media screen and (max-width: 700px) {
+
+            body {
+                overflow-x: hidden;
+            }
+
+            .navbar {
+                flex-direction: column;
+                padding: 20px;
+                gap: 20px;
+                position: relative;
+            }
+
+            .logo {
+                font-size: 24px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .nav-links a {
+                font-size: 15px;
+            }
+
+            .hero {
+                min-height: 60vh;
+                padding: 60px 20px;
+            }
+
+            .hero-content h1 {
+                font-size: 40px;
+            }
+
+            .hero-content span {
+                font-size: 12px;
+            }
+
+            .hero-content p {
+                font-size: 15px;
+            }
+
+            .section {
+                padding: 60px 20px;
+            }
+
+            .section-title {
+                margin-bottom: 35px;
+            }
+
+            .section-title h2 {
+                font-size: 32px;
+            }
+
+            .section-title p {
+                font-size: 15px;
+            }
+
+            .about-info {
+                grid-template-columns: 1fr;
+            }
+
+            .info-card:last-child {
+                grid-column: auto;
+                width: 100%;
+            }
+
+            .info-card {
+                padding: 25px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-card:last-child {
+                grid-column: auto;
+                width: 100%;
+            }
+
+            .feature-card {
+                padding: 25px;
+            }
+
+            .achievements {
+                grid-template-columns: 1fr;
+            }
+
+            .achievement-image img {
+                height: 300px;
+            }
+
+            .achievement-text h2 {
+                font-size: 32px;
+            }
+
+            .achievement-text p {
+                font-size: 15px;
+            }
+
+            .cta {
+                padding: 70px 20px;
+            }
+
+            .cta h2 {
+                font-size: 34px;
+            }
+
+            .cta p {
+                font-size: 15px;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            footer {
+                padding: 40px 20px 20px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+
+        }
+
+        @media screen and (max-width: 400px) {
+
+            .logo {
+                font-size: 21px;
+            }
+
+            .nav-links {
+                gap: 10px;
+            }
+
+            .nav-links a {
+                font-size: 14px;
+            }
+
+            .hero {
+                padding: 50px 15px;
+            }
+
+            .hero-content h1 {
+                font-size: 32px;
+            }
+
+            .hero-content p {
+                font-size: 14px;
+            }
+
+            .section {
+                padding: 50px 15px;
+            }
+
+            .section-title h2 {
+                font-size: 28px;
+            }
+
+            .info-card h3 {
+                font-size: 21px;
+            }
+
+            .feature-card h3 {
+                font-size: 22px;
+            }
+
+            .achievement-image img {
+                height: 250px;
+            }
+
+            .achievement-text h2 {
+                font-size: 28px;
+            }
+
+            .cta h2 {
+                font-size: 29px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            SPORTS CARS
+        </div>
+
+        <div class="nav-links">
+
+            <a href="Home.html">Home</a>
+
+            <a href="About.html">About</a>
+
+            <a href="CONTACT.html">Contact</a>
+
+        </div>
+
+    </nav>
+
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <span>
+                DISCOVER THE MACHINE
+            </span>
+
+            <h1>
+                ABOUT SPORTS CARS
+            </h1>
+
+            <p>
+                Explore the engineering, performance, design
+                and technology behind some of the world's
+                most exciting sports cars.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="section">
+
+        <div class="section-title">
+
+            <span>
+                ABOUT SPORTS CARS
+            </span>
+
+            <h2>
+                The World Of Performance
+            </h2>
+
+            <p>
+                Sports cars are designed to deliver a combination
+                of speed, handling, power and driving excitement.
+            </p>
+
+        </div>
+
+        <div class="about-info">
+
+            <div class="info-card">
+
+                <h3>
+                    What Is A Sports Car?
+                </h3>
+
+                <p>
+                    A sports car is a high-performance vehicle
+                    designed with an emphasis on speed, handling,
+                    acceleration and driving enjoyment. These cars
+                    usually have powerful engines, responsive
+                    steering and aerodynamic designs.
+                </p>
+
+            </div>
+
+            <div class="info-card">
+
+                <h3>
+                    Performance
+                </h3>
+
+                <p>
+                    Performance is one of the most important
+                    characteristics of a sports car. Manufacturers
+                    use powerful engines, advanced suspension,
+                    strong braking systems and lightweight materials
+                    to improve acceleration and handling.
+                </p>
+
+            </div>
+
+            <div class="info-card">
+
+                <h3>
+                    Design And Technology
+                </h3>
+
+                <p>
+                    Modern sports cars combine attractive styling
+                    with advanced technology. Aerodynamic bodywork,
+                    digital displays, performance systems and
+                    advanced safety features help create a modern
+                    driving experience.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="section features">
+
+        <div class="section-title">
+
+            <span>
+                WHAT MAKES THEM SPECIAL
+            </span>
+
+            <h2>
+                Sports Car Features
+            </h2>
+
+            <p>
+                Performance cars combine technology,
+                engineering and design to create an
+                exceptional driving experience.
+            </p>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+
+            <div class="feature-card">
+
+                <h3>
+                    Design
+                </h3>
+
+                <ul>
+
+                    <li>
+                        Aerodynamic body design
+                    </li>
+
+                    <li>
+                        Premium interior
+                    </li>
+
+                    <li>
+                        Leather or racing seats
+                    </li>
+
+                    <li>
+                        Sport steering wheel
+                    </li>
+
+                    <li>
+                        Advanced lighting
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <h3>
+                    Performance
+                </h3>
+
+                <ul>
+
+                    <li>
+                        Powerful engines
+                    </li>
+
+                    <li>
+                        High acceleration
+                    </li>
+
+                    <li>
+                        Advanced braking systems
+                    </li>
+
+                    <li>
+                        Performance suspension
+                    </li>
+
+                    <li>
+                        High-speed handling
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <h3>
+                    Popular Models
+                </h3>
+
+                <ul>
+
+                    <li>
+                        Audi R8
+                    </li>
+
+                    <li>
+                        BMW M4
+                    </li>
+
+                    <li>
+                        Aston Martin Vantage
+                    </li>
+
+                    <li>
+                        Porsche 911
+                    </li>
+
+                    <li>
+                        McLaren 720S
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <section class="section">
+
+        <div class="achievements">
+
+
+            <div class="achievement-image">
+
+                <img
+                    src="FERRARI.jpg"
+                    alt="Ferrari sports car"
+                >
+
+            </div>
+
+
+            <div class="achievement-text">
+
+                <span>
+                    AUTOMOTIVE EXCELLENCE
+                </span>
+
+                <h2>
+                    Engineering Without Limits
+                </h2>
+
+                <p>
+                    Sports-car manufacturers continue to
+                    push the limits of automotive engineering.
+                    Their vehicles combine powerful engines,
+                    advanced materials, aerodynamic designs
+                    and sophisticated technology.
+                </p>
+
+                <ul class="achievement-list">
+
+                    <li>
+                        High-performance engine development
+                    </li>
+
+                    <li>
+                        Advanced aerodynamic technology
+                    </li>
+
+                    <li>
+                        Lightweight vehicle construction
+                    </li>
+
+                    <li>
+                        Advanced V12 performance
+                    </li>
+
+                    <li>
+                        Extreme speed and engineering
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <section class="cta">
+
+        <h2>
+            Explore The World Of Speed
+        </h2>
+
+        <p>
+            Discover more about sports cars and get in
+            touch with us to learn more.
+        </p>
+
+        <a
+            href="CONTACT.html"
+            class="btn"
+        >
+            Contact Us
+        </a>
+
+    </section>
+
+
+    <footer>
+
+        <div class="footer-content">
+
+
+            <div>
+
+                <h3>
+                    SPORTS CARS
+                </h3>
+
+                <p>
+                    Your destination for discovering
+                    high-performance sports cars,
+                    legendary brands and automotive
+                    excellence.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>
+                    QUICK LINKS
+                </h3>
+
+                <a href="Home.html">
+                    Home
+                </a>
+
+                <a href="About.html">
+                    About
+                </a>
+
+                <a href="CONTACT.html">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    EXPLORE
+                </h3>
+
+                <p>
+                    Ferrari
+                </p>
+
+                <p>
+                    Lamborghini
+                </p>
+
+                <p>
+                    Bugatti
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="copyright">
+
+            &copy; 2026 Sports Cars.
+            All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

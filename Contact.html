@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sports Cars | Contact</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #0b0b0b;
+            color: white;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: black;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: red;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: red;
+        }
+
+        .hero {
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 70px 7%;
+
+            background:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.65),
+                    rgba(0, 0, 0, 0.85)
+                ),
+                url("LAMBO.jpg");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-content span {
+            color: red;
+            font-size: 15px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .hero-content h1 {
+            font-size: 60px;
+            margin: 20px 0;
+        }
+
+        .hero-content p {
+            color: #ddd;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .section {
+            padding: 90px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: red;
+            font-size: 15px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .section-title h2 {
+            font-size: 42px;
+            margin-top: 10px;
+        }
+
+        .section-title p {
+            max-width: 650px;
+            margin: 15px auto;
+            color: #aaa;
+            line-height: 1.7;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 30px;
+        }
+
+        .contact-details,
+        .contact-form {
+            background-color: #151515;
+            padding: 40px;
+            border-top: 4px solid red;
+        }
+
+        .contact-details h2,
+        .contact-form h2 {
+            font-size: 28px;
+            margin-bottom: 25px;
+        }
+
+        .contact-details > p {
+            color: #aaa;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .contact-box {
+            padding: 20px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        .contact-box:last-child {
+            border-bottom: none;
+        }
+
+        .contact-box h3 {
+            color: red;
+            font-size: 17px;
+            margin-bottom: 8px;
+        }
+
+        .contact-box p {
+            color: #ddd;
+            line-height: 1.6;
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #ddd;
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 15px;
+            background-color: #0b0b0b;
+            color: white;
+            border: 1px solid #333;
+            font-size: 15px;
+            outline: none;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: red;
+        }
+
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        select option {
+            background-color: #0b0b0b;
+            color: white;
+        }
+
+        .submit-btn {
+            background-color: red;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .why-contact {
+            background-color: #151515;
+        }
+
+        .reason-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .reason-card {
+            background-color: #0b0b0b;
+            padding: 35px;
+            text-align: center;
+            border-bottom: 3px solid red;
+        }
+
+        .reason-icon {
+            font-size: 40px;
+            color: red;
+            margin-bottom: 20px;
+        }
+
+        .reason-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .reason-card p {
+            color: #999;
+            line-height: 1.7;
+        }
+
+        .cta {
+            text-align: center;
+            padding: 100px 7%;
+
+            background:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.7),
+                    rgba(0, 0, 0, 0.85)
+                ),
+                url("FERRARI.jpg");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .cta h2 {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #ddd;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            line-height: 1.7;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: red;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #050505;
+            padding: 50px 7% 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-content h3 {
+            color: red;
+            margin-bottom: 15px;
+        }
+
+        .footer-content p {
+            color: #999;
+            line-height: 1.7;
+        }
+
+        .footer-links a {
+            display: block;
+            color: #999;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+
+        .copyright {
+            border-top: 1px solid #222;
+            padding-top: 20px;
+            text-align: center;
+            color: #777;
+        }
+
+        @media screen and (max-width: 1000px) {
+
+            .navbar {
+                padding: 18px 5%;
+            }
+
+            .nav-links {
+                gap: 20px;
+            }
+
+            .hero {
+                padding: 70px 6%;
+            }
+
+            .hero-content h1 {
+                font-size: 50px;
+            }
+
+            .section {
+                padding: 70px 5%;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .reason-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .reason-card:last-child {
+                grid-column: 1 / 3;
+                width: 50%;
+                margin: auto;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+        @media screen and (max-width: 700px) {
+
+            body {
+                overflow-x: hidden;
+            }
+
+            .navbar {
+                flex-direction: column;
+                padding: 20px;
+                gap: 20px;
+                position: relative;
+            }
+
+            .logo {
+                font-size: 24px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .nav-links a {
+                font-size: 15px;
+            }
+
+            .hero {
+                min-height: 55vh;
+                padding: 60px 20px;
+            }
+
+            .hero-content h1 {
+                font-size: 40px;
+            }
+
+            .hero-content span {
+                font-size: 12px;
+            }
+
+            .hero-content p {
+                font-size: 15px;
+            }
+
+            .section {
+                padding: 60px 20px;
+            }
+
+            .section-title {
+                margin-bottom: 35px;
+            }
+
+            .section-title h2 {
+                font-size: 32px;
+            }
+
+            .section-title p {
+                font-size: 15px;
+            }
+
+            .contact-details,
+            .contact-form {
+                padding: 25px;
+            }
+
+            .contact-details h2,
+            .contact-form h2 {
+                font-size: 24px;
+            }
+
+            .reason-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .reason-card:last-child {
+                grid-column: auto;
+                width: 100%;
+            }
+
+            .reason-card {
+                padding: 25px;
+            }
+
+            .cta {
+                padding: 70px 20px;
+            }
+
+            .cta h2 {
+                font-size: 34px;
+            }
+
+            .cta p {
+                font-size: 15px;
+            }
+
+            .btn,
+            .submit-btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            footer {
+                padding: 40px 20px 20px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+
+        }
+
+        @media screen and (max-width: 400px) {
+
+            .logo {
+                font-size: 21px;
+            }
+
+            .nav-links {
+                gap: 10px;
+            }
+
+            .nav-links a {
+                font-size: 14px;
+            }
+
+            .hero {
+                padding: 50px 15px;
+            }
+
+            .hero-content h1 {
+                font-size: 32px;
+            }
+
+            .hero-content p {
+                font-size: 14px;
+            }
+
+            .section {
+                padding: 50px 15px;
+            }
+
+            .section-title h2 {
+                font-size: 28px;
+            }
+
+            .contact-details,
+            .contact-form {
+                padding: 20px;
+            }
+
+            .contact-details h2,
+            .contact-form h2 {
+                font-size: 22px;
+            }
+
+            input,
+            select,
+            textarea {
+                font-size: 14px;
+                padding: 12px;
+            }
+
+            .reason-card h3 {
+                font-size: 20px;
+            }
+
+            .cta h2 {
+                font-size: 29px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            SPORTS CARS
+        </div>
+
+        <div class="nav-links">
+
+            <a href="Home.html">Home</a>
+
+            <a href="About.html">About</a>
+
+            <a href="CONTACT.html">Contact</a>
+
+        </div>
+
+    </nav>
+
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <span>
+                GET IN TOUCH
+            </span>
+
+            <h1>
+                CONTACT US
+            </h1>
+
+            <p>
+                Have questions about sports cars?
+                Contact us and discover more about
+                performance, technology and automotive excellence.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="section">
+
+        <div class="section-title">
+
+            <span>
+                CONTACT INFORMATION
+            </span>
+
+            <h2>
+                Let's Talk Cars
+            </h2>
+
+            <p>
+                Whether you want to learn more about a specific
+                model or simply share your passion for sports cars,
+                we would love to hear from you.
+            </p>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+            <div class="contact-details">
+
+                <h2>
+                    Our Contact Details
+                </h2>
+
+                <p>
+                    Reach out to us using any of the contact
+                    information below.
+                </p>
+
+
+                <div class="contact-box">
+
+                    <h3>
+                        PHONE
+                    </h3>
+
+                    <p>
+                        +266 56278888
+                    </p>
+
+                </div>
+
+
+                <div class="contact-box">
+
+                    <h3>
+                        EMAIL
+                    </h3>
+
+                    <p>
+                        sportscars@gmail.com
+                    </p>
+
+                </div>
+
+
+                <div class="contact-box">
+
+                    <h3>
+                        LOCATION
+                    </h3>
+
+                    <p>
+                        Maseru, Lesotho
+                    </p>
+
+                </div>
+
+
+                <div class="contact-box">
+
+                    <h3>
+                        OPENING HOURS
+                    </h3>
+
+                    <p>
+                        Monday - Friday: 08:00 - 17:00
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-form">
+
+                <h2>
+                    Send Us a Message
+                </h2>
+
+
+                <form>
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter your full name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email address"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="subject">
+                            Subject
+                        </label>
+
+                        <input
+                            type="text"
+                            id="subject"
+                            placeholder="Enter your subject"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="car">
+                            Choose Your Car
+                        </label>
+
+                        <select id="car">
+
+                            <option>
+                                Select a sports car
+                            </option>
+
+                            <option>
+                                Ferrari 488 GTB
+                            </option>
+
+                            <option>
+                                Lamborghini Aventador
+                            </option>
+
+                            <option>
+                                Bugatti Chiron
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="message">
+                            Message
+                        </label>
+
+                        <textarea
+                            id="message"
+                            placeholder="Write your message here..."
+                        ></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="submit-btn"
+                    >
+                        SEND MESSAGE
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="section why-contact">
+
+        <div class="section-title">
+
+            <span>
+                WHY CONTACT US
+            </span>
+
+            <h2>
+                We're Here To Help
+            </h2>
+
+            <p>
+                Get information and guidance about
+                the world of high-performance sports cars.
+            </p>
+
+        </div>
+
+
+        <div class="reason-grid">
+
+            <div class="reason-card">
+
+                <div class="reason-icon">
+                    ★
+                </div>
+
+                <h3>
+                    Expert Information
+                </h3>
+
+                <p>
+                    Learn more about sports cars,
+                    their features, performance and technology.
+                </p>
+
+            </div>
+
+
+            <div class="reason-card">
+
+                <div class="reason-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    Performance
+                </h3>
+
+                <p>
+                    Discover information about speed,
+                    acceleration, engines and handling.
+                </p>
+
+            </div>
+
+
+            <div class="reason-card">
+
+                <div class="reason-icon">
+                    ✓
+                </div>
+
+                <h3>
+                    Quick Response
+                </h3>
+
+                <p>
+                    Send us your questions and
+                    we will help you learn more about sports cars.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="cta">
+
+        <h2>
+            Ready To Explore?
+        </h2>
+
+        <p>
+            Discover Ferrari, Lamborghini, Bugatti and
+            other legendary sports cars.
+        </p>
+
+        <a
+            href="Home.html"
+            class="btn"
+        >
+            Explore Cars
+        </a>
+
+    </section>
+
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+
+                <h3>
+                    SPORTS CARS
+                </h3>
+
+                <p>
+                    Your destination for discovering
+                    high-performance sports cars,
+                    legendary brands and automotive excellence.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>
+                    QUICK LINKS
+                </h3>
+
+                <a href="Home.html">
+                    Home
+                </a>
+
+                <a href="About.html">
+                    About
+                </a>
+
+                <a href="CONTACT.html">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    EXPLORE
+                </h3>
+
+                <p>
+                    Ferrari
+                </p>
+
+                <p>
+                    Lamborghini
+                </p>
+
+                <p>
+                    Bugatti
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            &copy; 2026 Sports Cars.
+            All Rights Reserved.
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
